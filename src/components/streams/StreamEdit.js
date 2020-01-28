@@ -20,7 +20,7 @@ const StreamEdit = props => {
   return (
     <div>
       <h3>Update Stream</h3>
-      <StreamForm onSubmit={onSubmit} />
+      <StreamForm initialValues={props.stream} onSubmit={onSubmit} />
     </div>
   );
 };
