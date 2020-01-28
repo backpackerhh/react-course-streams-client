@@ -2,7 +2,7 @@ import _ from "lodash";
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 
-import { fetchStream } from "../../actions";
+import { fetchStream, updateStream } from "../../actions";
 import StreamForm from "./StreamForm";
 
 const StreamEdit = props => {
@@ -11,7 +11,7 @@ const StreamEdit = props => {
   }, []);
 
   const onSubmit = formValues => {
-    console.log(formValues);
+    props.updateStream(props.stream.id, formValues);
   };
 
   if (!props.stream) {
@@ -35,4 +35,6 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-export default connect(mapStateToProps, { fetchStream })(StreamEdit);
+export default connect(mapStateToProps, { fetchStream, updateStream })(
+  StreamEdit
+);

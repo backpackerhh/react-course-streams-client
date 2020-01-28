@@ -69,4 +69,6 @@ export const updateStream = (id, formValues) => async dispatch => {
     type: UPDATE_STREAM,
     payload: response.data
   });
+
+  history.push("/");
 };
